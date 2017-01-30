@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-schedule',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleComponent implements OnInit {
 
-  viewDate = "01/01/2017";
+  viewDate: Date = new Date();
+  events = [];
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
+    this.eventService.getAll()
+      .subscribe(events => {
+        debugger;
+      })
   }
 
 }

@@ -11,7 +11,8 @@ import { appRoutes } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ScheduleComponent } from './schedule/schedule.component'
+import { ScheduleComponent } from './schedule/schedule.component';
+import { EventService } from './event.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ScheduleComponent } from './schedule/schedule.component'
     CalendarModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
