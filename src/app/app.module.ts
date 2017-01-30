@@ -13,6 +13,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { EventService } from './event.service';
+import { FitnessCenterComponent } from './fitness-center/fitness-center.component';
+import { CampgroundComponent } from './campground/campground.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EventService } from './event.service';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    FitnessCenterComponent,
+    CampgroundComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ import { EventService } from '../event.service';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.css']
+  styleUrls: ['schedule.component.scss']
 })
 export class ScheduleComponent implements OnInit {
 
@@ -16,8 +16,11 @@ export class ScheduleComponent implements OnInit {
   ngOnInit() {
     this.eventService.getAll()
       .subscribe(events => {
-        debugger;
+        this.events = events;
       })
   }
 
+  month(): string {
+    return this.viewDate.toLocaleString("en-us", { month: "long" });
+  }
 }
