@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    container_name: lvcc-frontend
+    build: .
+    ports:
+      - 4200:4200
+      - 49152:49152
+    volumes:
+      - .:/app
