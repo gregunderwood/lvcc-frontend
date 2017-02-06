@@ -1,5 +1,29 @@
-h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  color: #2c801f;
+.calendar-controls {
+  margin: 16px 0;
+
+  .left-controls {
+    padding-left: 0;
+
+  }
+
+  .date-display {
+    text-align: center;
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .right-controls {
+    text-align: right;
+  }
+
 }
+
+.full-width {
+  width: 100%;
+}
+
+.event-controls {
+  margin-top: 16px;
+}
+

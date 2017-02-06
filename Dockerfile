@@ -6,6 +6,7 @@ RUN mkdir -p $APP_DIR
 COPY . $APP_DIR
 WORKDIR $APP_DIR
 RUN npm install
+RUN npm rebuild node-sass
 RUN typings install
 RUN cp start.sh / && chmod +x /start.sh
 

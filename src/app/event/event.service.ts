@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { CalendarEvent } from 'calendar-utils'
+import { CalendarEvent } from 'angular-calendar';
 import { Observable } from 'rxjs/Observable';
 
-import { colors } from './utils/colors';
+import { colors } from '../utils/colors';
 
 @Injectable()
 export class EventService {

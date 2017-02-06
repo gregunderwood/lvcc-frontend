@@ -1,32 +1,45 @@
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button"
-              class="navbar-toggle collapsed"
+<header class="navbar navbar-light navbar-toggleable-md bd-navbar">
+  <nav class="container">
+    <div class="d-flex justify-content-between hidden-lg-up">
+      <a class="navbar-brand" [routerLink]="['home']">
+        Lardeau Valley Community Center
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              aria-controls="bd-main-nav"
               aria-expanded="false"
-              aria-controls="navbar"
-              (click)="isCollapsed = !isCollapsed" >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+              aria-label="Toggle navigation"
+              (click)="isCollapsed = !isCollapsed">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Lardeau Valley Community Center</a>
     </div>
-    <div id="navbar"
-         class="collapse navbar-collapse"
-         (collapsed)="collapsed($event)"
-         [collapse]="isCollapsed">
+
+    <div class="collapse navbar-collapse"
+         [ngbCollapse]="isCollapsed">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['home']">Home</a></li>
-        <li><a [routerLink]="['schedule']">Schedule</a></li>
-        <li><a [routerLink]="['campground']">Campground</a></li>
-        <li><a [routerLink]="['fitness-center']">Fitness Center</a></li>
-        <li><a [routerLink]="['about']">About</a></li>
-        <li><a [routerLink]="['contact']">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['schedule']">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['campground']">Campground</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['fitness-center']">Fitness Center</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['about']">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['contact']">Contact</a>
+        </li>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+    </div>
+  </nav>
+</header>
 
 <router-outlet></router-outlet>
+<template ngbModalContainer></template>
+

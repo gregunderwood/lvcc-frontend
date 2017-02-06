@@ -1,7 +1,77 @@
 <div class="container">
-  <h2>{{month()}} {{viewDate.getFullYear()}}</h2>
-  <mwl-calendar-month-view
-    [viewDate]="viewDate"
-    [events]="events">
-  </mwl-calendar-month-view>
+  <div class="row  calendar-controls">
+    <div class="col-md-4 left-controls">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate">
+          Previous
+        </div>
+        <div
+          class="btn btn-secondary"
+          mwlCalendarToday
+          [(viewDate)]="viewDate">
+          Today
+        </div>
+        <div
+          class="btn btn-primary"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate">
+          Next
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 date-display">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="col-md-4 right-controls">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          (click)="selectView('month')"
+          [class.active]="view === 'month'">
+          Month
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="selectView('week')"
+          [class.active]="view === 'week'">
+          Week
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="selectView('day')"
+          [class.active]="view === 'day'">
+          Day
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="'month'"
+      [viewDate]="viewDate"
+      [events]="events"
+      class="full-width">
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="'week'"
+      [viewDate]="viewDate"
+      [events]="events"
+      class="full-width">
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="'day'"
+      [viewDate]="viewDate"
+      [events]="events"
+      class="full-width">
+    </mwl-calendar-day-view>
+  </div>
+  <div class="row event-controls">
+    <button class="btn btn-lg btn-outline-primary" (click)="open()">New Event</button>
+  </div>
 </div>
+

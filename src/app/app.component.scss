@@ -1,3 +1,19 @@
-nav {
-  margin-bottom: 0;
+header {
+  background-color: black;
+
+  nav {
+    margin-bottom: 0;
+    .nav-link {
+      color: azure;
+    }
+
+    .navbar-toggler {
+      background-color: azure;
+    }
+
+    .navbar-brand {
+      color: azure;
+    }
+  }
+
 }
